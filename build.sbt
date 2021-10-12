@@ -10,3 +10,5 @@ lazy val root = (project in file("."))
     name := "Shopping Cart",
     libraryDependencies += scalaTest % Test
   )
+
+Compile/mainClass := Some("com.thoughtworks.codepairing.SampleApp")
