@@ -1,20 +1,22 @@
-package com.thoughtworks.codepairing.model;
+package com.thoughtworks.codepairing.model
 
-class ShoppingCart(customer: Customer, products: List[Product]) {
+import scala.collection.mutable.ListBuffer
 
-    def addProduct(product: Product) = products :+ product
+class ShoppingCart(customer: Customer, products: ListBuffer[Product]) {
+
+    def addProduct(product: Product) = products += product
 
     def checkout(): Order = {
         var totalPrice = 0.0
         var loyaltyPointsEarned = 0
 
         for (product <- products) {
-            var discount = 0.0;
+            var discount = 0.0
             if (product.productCode.startsWith("DIS_10")) {
-                discount = (product.price * 0.1);
+                discount = product.price * 0.1
                 loyaltyPointsEarned += (product.price / 10).toInt
             } else if (product.productCode.startsWith("DIS_15")) {
-                discount = (product.price * 0.15)
+                discount = product.price * 0.15
                 loyaltyPointsEarned += (product.price / 15).toInt
             } else {
                 loyaltyPointsEarned += (product.price / 5).toInt

@@ -1,3 +1,3 @@
-package com.thoughtworks.codepairing.model;
+package com.thoughtworks.codepairing.model
 
 case class Customer(name: String)
