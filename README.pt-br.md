@@ -18,7 +18,7 @@ Existe uma aplicação de carrinho de compras, com um pequeno conjunto de regras
 Familiarize-se com a base de código! Certifique-se de ter as dependências necessárias instaladas e de poder executar os testes.
 
 ## O que você precisa para executá-lo
-- [Scala 2.12](https://docs.scala-lang.org/getting-started/index.html)
+- [Scala 3.1.3](https://docs.scala-lang.org/getting-started/index.html)
 
 ## Construir (build)
 
