@@ -23,7 +23,7 @@ Get familiar with the codebase! Make sure you have the necessary dependencies in
 
 ## What you need to run it
 
-- [Scala 2.12](https://docs.scala-lang.org/getting-started/index.html)
+- [Scala 3.1.3](https://docs.scala-lang.org/getting-started/index.html)
 
 ## Build
 

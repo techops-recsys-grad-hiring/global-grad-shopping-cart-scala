@@ -79,3 +79,6 @@ fabric.properties
 
 /.bsp/
 target/
+
+.metals/
+.vscode/

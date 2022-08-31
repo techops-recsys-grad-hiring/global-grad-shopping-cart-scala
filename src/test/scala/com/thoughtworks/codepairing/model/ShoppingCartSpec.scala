@@ -4,65 +4,62 @@ import scala.collection.mutable.ListBuffer
 
 import com.thoughtworks.codepairing.model._
 
-class ShoppingCartSpec extends AnyFlatSpec with Matchers {
+class ShoppingCartSpec extends AnyFlatSpec, Matchers:
 
-    def fixture = 
-        new {
-            val price = 100
-            val product = "Product"
-            val customer = Customer("test")
-        }
+  object fixture:
+    val price = 100
+    val product = "Product"
+    val customer = Customer("test")
 
-    "The ShoppingCart" should "calculate price with no discount" in {
-        val products = ListBuffer(Product(fixture.price, "", fixture.product))
-        val cart = new ShoppingCart(fixture.customer, products)
-        
-        val order = cart.checkout()
+  "The ShoppingCart" should "calculate price with no discount" in {
+    val products = ListBuffer(Product(fixture.price, "", fixture.product))
+    val cart = new ShoppingCart(fixture.customer, products)
+    
+    val order = cart.checkout()
 
-        order.totalPrice shouldEqual 100.0
-    }
+    order.totalPrice shouldEqual 100.0
+  }
 
-    it should "calculate loyalty points with no discount" in {
-        val products = ListBuffer(Product(fixture.price, "", fixture.product))
-        val cart = new ShoppingCart(fixture.customer, products)
+  it should "calculate loyalty points with no discount" in {
+      val products = ListBuffer(Product(fixture.price, "", fixture.product))
+      val cart = new ShoppingCart(fixture.customer, products)
 
-        val order = cart.checkout()
+      val order = cart.checkout()
 
-        order.loyaltyPoints shouldEqual 20
-    }
+      order.loyaltyPoints shouldEqual 20
+  }
 
-    it should "calculate price for 10 percent discount" in {
-        val products = ListBuffer(Product(fixture.price, "DIS_10_ABCD", fixture.product))
-        val cart = new ShoppingCart(fixture.customer, products)
-        
-        val order = cart.checkout()
+  it should "calculate price for 10 percent discount" in {
+      val products = ListBuffer(Product(fixture.price, "DIS_10_ABCD", fixture.product))
+      val cart = new ShoppingCart(fixture.customer, products)
+      
+      val order = cart.checkout()
 
-        order.totalPrice shouldEqual 90.0
-    }
+      order.totalPrice shouldEqual 90.0
+  }
 
-    it should "calculate loyalt points for 10 percent discount" in {
-        val products = ListBuffer(Product(fixture.price, "DIS_10_ABCD", fixture.product))
-        val cart = new ShoppingCart(fixture.customer, products)
-        val order = cart.checkout()
+  it should "calculate loyalt points for 10 percent discount" in {
+      val products = ListBuffer(Product(fixture.price, "DIS_10_ABCD", fixture.product))
+      val cart = new ShoppingCart(fixture.customer, products)
+      val order = cart.checkout()
 
-        order.loyaltyPoints shouldEqual 10
-    }
+      order.loyaltyPoints shouldEqual 10
+  }
 
-    it should "calculate price for 15 percent discount" in {
-        val products = ListBuffer(Product(fixture.price, "DIS_15_ABCD", fixture.product))
-        val cart = new ShoppingCart(fixture.customer, products)
-        
-        val order = cart.checkout()
+  it should "calculate price for 15 percent discount" in {
+      val products = ListBuffer(Product(fixture.price, "DIS_15_ABCD", fixture.product))
+      val cart = new ShoppingCart(fixture.customer, products)
+      
+      val order = cart.checkout()
 
-        order.totalPrice shouldEqual 85.0
-    }
+      order.totalPrice shouldEqual 85.0
+  }
 
-    it should "calculate loyalty points for 15 percent discount" in {
-        val products = ListBuffer(Product(fixture.price, "DIS_15_ABCD", fixture.product))
-        val cart = new ShoppingCart(fixture.customer, products)
-        
-        val order = cart.checkout()
+  it should "calculate loyalty points for 15 percent discount" in {
+      val products = ListBuffer(Product(fixture.price, "DIS_15_ABCD", fixture.product))
+      val cart = new ShoppingCart(fixture.customer, products)
+      
+      val order = cart.checkout()
 
-        order.loyaltyPoints shouldEqual 6
-    }
-}
+      order.loyaltyPoints shouldEqual 6
+  }
