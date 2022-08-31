@@ -4,7 +4,7 @@ import scala.collection.mutable.ListBuffer
 
 class ShoppingCart(customer: Customer, products: ListBuffer[Product]) {
 
-    def addProduct(product: Product) = products += product
+    def addProduct(product: Product): ListBuffer[Product] = products += product
 
     def checkout(): Order = {
         var totalPrice = 0.0
@@ -28,7 +28,7 @@ class ShoppingCart(customer: Customer, products: ListBuffer[Product]) {
         return Order(totalPrice, loyaltyPointsEarned)
     }
 
-    override def toString() = s"Customer: ${customer.name} \n" + 
+    override def toString(): String = s"Customer: ${customer.name} \n" + 
                             "Bought: \n" + 
                             products.map(p => s"- ${p.name}, ${p.price}").mkString("\n")
 }

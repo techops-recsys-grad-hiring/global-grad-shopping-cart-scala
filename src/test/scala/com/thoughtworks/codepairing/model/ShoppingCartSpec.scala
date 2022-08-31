@@ -6,8 +6,9 @@ import com.thoughtworks.codepairing.model._
 
 class ShoppingCartSpec extends AnyFlatSpec with Matchers {
 
-    def fixture = 
-        new {
+    def fixture: fixture = 
+        new fixture()
+    class fixture() extends {
             val price = 100
             val product = "Product"
             val customer = Customer("test")
