@@ -1,10 +1,19 @@
 package com.thoughtworks.codepairing.model
 
-import scala.collection.mutable.ListBuffer
+case class Product(price: Double, productCode: String, name: String)
 
-class ShoppingCart(customer: Customer, products: ListBuffer[Product]) {
+case class Order(totalPrice: Double, loyaltyPoints: Int) {
 
-    def addProduct(product: Product) = products += product
+    override def toString() =
+        s"""Total price: $totalPrice
+           |Will receive $loyaltyPoints loyalty points""".stripMargin
+}
+
+case class Customer(name: String)
+
+class ShoppingCart(customer: Customer, products: List[Product]) {
+
+    def addProduct(product: Product): ShoppingCart = new ShoppingCart(customer, product :: products)
 
     def checkout(): Order = {
         var totalPrice = 0.0
@@ -25,7 +34,7 @@ class ShoppingCart(customer: Customer, products: ListBuffer[Product]) {
             totalPrice += product.price - discount
         }
 
-        return Order(totalPrice, loyaltyPointsEarned)
+        Order(totalPrice, loyaltyPointsEarned)
     }
 
     override def toString() = s"Customer: ${customer.name} \n" + 
