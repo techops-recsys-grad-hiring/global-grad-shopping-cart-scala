@@ -10,11 +10,11 @@ conversations.
 
 ## Problem Statement
 
-We have an existing shopping cart application, with a small set of eCommerce/shopping cart rules. Rules include calculation of total price, discount and loyalty points calculation. Most of the business logic is implemented in single method ShoppingCart.checkout.
+We have an existing shopping cart application, with a small set of eCommerce/shopping cart rules. Rules include calculation of total price, discount and loyalty points calculation. Most of the business logic is implemented in single method `ShoppingCart.checkout()`.
 
 ## Technology used
 
-- Scala
+- Scala 3
 - [SBT](https://www.scala-sbt.org/)
 
 ## Before the interview
@@ -23,7 +23,8 @@ Get familiar with the codebase! Make sure you have the necessary dependencies in
 
 ## What you need to run it
 
-- [Scala 2.12](https://docs.scala-lang.org/getting-started/index.html)
+- sbt available on the console
+- checked out code
 
 ## Build
 
@@ -47,7 +48,7 @@ $ sbt run
 
 ## Existing Business Rules
 
-Application code currently has following rules:
+Application code currently has the following rules:
 
 - Calculates total price and total loyalty points earned by the customer.
 - Products with product code starting with DIS_10 have a 10% discount applied.

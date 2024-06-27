@@ -11,14 +11,14 @@ conversar e aprendermos umas com os outras.
 Existe uma aplicação de carrinho de compras, com um pequeno conjunto de regras de comércio eletrônico/carrinho de compras. As regras incluem cálculo de preço total, desconto e cálculo de pontos de fidelidade. A maior parte da lógica de negócios é implementada em um único método ShoppingCart.checkout. Este código foi pensado como uma biblioteca, parte de um sistema maior que não vai ser abordado nesta etapa do processo.
 
 ## Tecnologias utlizadas
-* Scala
+* Scala 3
 * [SBT](https://www.scala-sbt.org/)
 
 ## Antes da entrevista
 Familiarize-se com a base de código! Certifique-se de ter as dependências necessárias instaladas e de poder executar os testes.
 
 ## O que você precisa para executá-lo
-- [Scala 2.12](https://docs.scala-lang.org/getting-started/index.html)
+- sbt
 
 ## Construir (build)
 
@@ -48,5 +48,5 @@ A biblioteca atualmente possui as seguintes regras de negócio implementadas:
 * Produtos com código de produto começando com DIS_15 têm um desconto de 15% aplicado.
 * Mais pontos de fidelidade são obtidos quando o produto não tem nenhum desconto aplicado:
     - O cliente ganha 1 ponto em cada compra de $5.
-    - O cliente ganha 1 ponto a cada $ 10 gastos em um produto com 10% de desconto.
-    - O cliente ganha 1 ponto a cada US $ 15 gastos em um produto com 15% de desconto.
+    - O cliente ganha 1 ponto a cada $10 gastos em um produto com 10% de desconto.
+    - O cliente ganha 1 ponto a cada US $15 gastos em um produto com 15% de desconto.
