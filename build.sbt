@@ -1,14 +1,14 @@
-import Dependencies._
+inThisBuild(
+  List(
+    version := "0.1",
+    scalaVersion := "3.4.2"
+  ))
 
-ThisBuild / scalaVersion     := "2.13.6"
-ThisBuild / version          := "1.0-SNAPSHOT"
-ThisBuild / organization     := "com.thoughtworks.codepairing"
-ThisBuild / organizationName := "thoughtworks"
+lazy val scalaTestVersion = "3.2.18"
+lazy val scalaTest = "org.scalatest" %% "scalatest" % scalaTestVersion % Test // Test framework: http://www.scalatest.org/
 
-lazy val root = (project in file("."))
-  .settings(
-    name := "Shopping Cart",
-    libraryDependencies += scalaTest % Test
-  )
+scalacOptions ++= Seq("-deprecation", "-feature")
+
+libraryDependencies += scalaTest
 
 Compile/mainClass := Some("com.thoughtworks.codepairing.SampleApp")
